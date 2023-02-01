@@ -1,4 +1,4 @@
-//1st Part Of Program
+//1.1st Part Of Program
 
 var timezone=document.getElementById("timezone");
 var lat=document.getElementById("lat");
@@ -10,7 +10,7 @@ var dstsecond=document.getElementById("dstsecond");
 var country=document.getElementById("country");
 var post=document.getElementById("post");
 var city=document.getElementById("city");
-
+//2.Using the HTML5 Geolocation API to detect the user's current location on page load automatically
  function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);  
@@ -19,8 +19,10 @@ var city=document.getElementById("city");
       long.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
+//Show the user's current location on screen
      async function showPosition(position) { 
-    //const url="https://api.geoapify.com/v1/geocode/reverse?lat=24.263539624852875&lon=86.64242389362205&format=json&apiKey=25586aeebca8426c92e4a498631c72ac";
+      //3.Retrieving the time zone using the latitude and longitude coordinates
+    
     const url=`https://api.geoapify.com/v1/geocode/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json&apiKey=25586aeebca8426c92e4a498631c72ac`;
     const response=await fetch(url);
     var data=await response.json();
@@ -40,7 +42,7 @@ getLocation();
 
 
 //2nd Part of Program
-
+//User type the location and hit the submit button to get details of that particular location
 let input=document.getElementById("input");
 let submit=document.getElementById("submit");
 var message=document.getElementById("message");
@@ -56,6 +58,7 @@ submit.addEventListener("click",soch);
     }
 }
     async function fetchData(){
+     //4.Retrieving the time zone using an address provided by the user
     const url=`https://api.geoapify.com/v1/geocode/search?text=${input.value}&apiKey=25586aeebca8426c92e4a498631c72ac`;
     const response=await fetch(url);
     const responseData=await response.json();
@@ -64,6 +67,7 @@ submit.addEventListener("click",soch);
     if(responseData.features==""){
         document.getElementById("vanish").innerHTML=`<br><p style="color:red;font-size:19px;">TimeZone could not be found!</p>`;
     }
+     //Result Shown according to address typed by user
     let tableData='';
         tableData=`<h1>Your Result</h1><br><div style="font-size:18px;font-family: 'Montserrat', sans-serif;border:1px solid white;
         margin-left: 10px;
