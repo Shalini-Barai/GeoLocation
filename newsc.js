@@ -69,7 +69,7 @@ submit.addEventListener("click",soch);
         margin-left: 10px;
         margin-top: 10px;
         font-weight: 550;width:800px;height:400px;"><div>Name of Time Zone : ${responseData.features[0].properties.timezone.name}</div><br>  
-        <div>Lat :&nbsp ${responseData.features[0].properties.lat}$&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbspLong :${responseData.features[0].properties.lon}</div><br>
+        <div>Lat :&nbsp ${responseData.features[0].properties.lat}&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbspLong :${responseData.features[0].properties.lon}</div><br>
         <div>Offset STD :&nbsp ${responseData.features[0].properties.timezone.offset_STD}</div><br>
          <div>Offset STD Seconds :&nbsp${responseData.features[0].properties.timezone.offset_STD_seconds} </div><br>
          <div>Offset DST :&nbsp ${responseData.features[0].properties.timezone.offset_DST}</div><br>
